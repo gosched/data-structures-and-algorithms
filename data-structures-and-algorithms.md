@@ -5,22 +5,25 @@
 ### BuiltIn
 
 ```go
-s := []int{5,4,3,2,1}
+s := []int{50, 10, 5, 4, 3, 2, 1}
 sort.Ints(s)
 ```
 
 ```javascript
-let items1 = [5,4,3,2,1];
+let items1 = [50, 10, 5, 4, 3, 2, 1];
 
-items1.sort(function(a,b) {
-    return a-b;
+items1.sort(function(a, b) {
+    return a - b;
 });
 
-items1.sort(function(a,b){
-    return b-a;
+items1.sort(function(a, b) {
+    return b - a;
 });
+
+items1.sort((a, b) => a - b);
+
+items1.sort((a, b) => b - a);
 ```
-
 
 ```javascript
 let str = 'zyx';
@@ -70,7 +73,7 @@ let quickSort = function(items) {
 
 let quick = function(items, left, right) {
     if(!items) return;
-    if(items.length > 1) {
+    if(1 < items.length) {
         let p = partition(items, left, right);
         if(left < p - 1) {
             quick(items, left, p-1);
